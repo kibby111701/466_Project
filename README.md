@@ -6,3 +6,4 @@
 
 ### Purity and Entropy of a clustering in R: https://search.r-project.org/CRAN/refmans/NMF/html/purity.html
 ### Dendogram of a clustering in R + other stuff for Hierarchical Clustering: https://uc-r.github.io/hc_clustering
+### Presentation: https://docs.google.com/presentation/d/1jIi16HEWtuCwVifJ53FWDG0zfC8_glm1UvlFrWUpD1c/edit#slide=id.p
