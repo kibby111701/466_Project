@@ -3,7 +3,6 @@ package src;
 public class HierarchicalClustering {
 
     public static void main(String[] args){
-
     /*
     * steps:
     * 1. process file into DataPoint objects
