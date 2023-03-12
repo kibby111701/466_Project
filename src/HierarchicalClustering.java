@@ -42,6 +42,7 @@ public class HierarchicalClustering {
         System.out.println("hi");
     }
 
+    // reads the file and creates datapoint and cluster objects
     public static void process(){
         Scanner read;
 
@@ -80,6 +81,7 @@ public class HierarchicalClustering {
         }
     }
 
+    // fills the pair priority queue with all possible pairs of clusters
     public static void initializeQueue(ClusterDistance distanceAlg){
         Cluster c1;
         Cluster c2;
@@ -93,6 +95,7 @@ public class HierarchicalClustering {
         }
     }
 
+    // merges nearby clusters until only one is left
     public static void buildHierarchy(ClusterDistance distanceAlg){
         Pair curPair;
         ArrayList<Cluster> newChildren;
@@ -107,7 +110,6 @@ public class HierarchicalClustering {
 
                 clusters.remove(curPair.c1);
                 clusters.remove(curPair.c2);
-                trimQueue(curPair);
 
                 addNewPairs(newC, distanceAlg);
                 clusters.add(newC);
@@ -115,19 +117,7 @@ public class HierarchicalClustering {
         }
     }
 
-    public static void trimQueue(Pair curPair){
-        ArrayList<Pair> toRemove = new ArrayList<>();
-        for (Pair pair : pairsQueue){
-            if (pair.contains(curPair.c1) || pair.contains(curPair.c2)){
-                toRemove.add(pair);
-            }
-        }
-        for (Pair pair : toRemove){
-            pairsQueue.remove(pair);
-        }
-        toRemove.clear();
-    }
-
+    // given a new cluster, create pairs of that cluster with every other current cluster
     public static void addNewPairs(Cluster newC, ClusterDistance distanceAlg){
         for (Cluster cluster : clusters) {
             pairsQueue.add(new Pair(newC, cluster, distanceAlg));
