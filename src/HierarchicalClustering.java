@@ -85,7 +85,7 @@ public class HierarchicalClustering {
     }
 
     // fills the pair priority queue with all possible pairs of clusters
-    public static void initializeQueue(LinkingMethod distanceAlg){
+    public static void initializeQueue(LinkingMethod linkingMethod){
         Cluster c1;
         Cluster c2;
 
@@ -93,13 +93,13 @@ public class HierarchicalClustering {
             for (int j = i+1; j < clusters.size(); j++){
                 c1 = clusters.get(i);
                 c2 = clusters.get(j);
-                pairsQueue.add(new Pair(c1, c2, distanceAlg));
+                pairsQueue.add(new Pair(c1, c2, linkingMethod));
             }
         }
     }
 
     // merges nearby clusters until only one is left
-    public static void buildHierarchy(LinkingMethod distanceAlg){
+    public static void buildHierarchy(LinkingMethod linkingMethod){
         Pair curPair;
         ArrayList<Cluster> newChildren;
         Cluster newC;
@@ -114,16 +114,16 @@ public class HierarchicalClustering {
                 clusters.remove(curPair.c1);
                 clusters.remove(curPair.c2);
 
-                addNewPairs(newC, distanceAlg);
+                addNewPairs(newC, linkingMethod);
                 clusters.add(newC);
             }
         }
     }
 
     // given a new cluster, create pairs of that cluster with every other current cluster
-    public static void addNewPairs(Cluster newC, LinkingMethod distanceAlg){
+    public static void addNewPairs(Cluster newC, LinkingMethod linkingMethod){
         for (Cluster cluster : clusters) {
-            pairsQueue.add(new Pair(newC, cluster, distanceAlg));
+            pairsQueue.add(new Pair(newC, cluster, linkingMethod));
         }
     }
 
