@@ -1,0 +1,3 @@
+Jack -- 1.5 Hours on 3/11
+ - Implemented Euclidean Distance with Single Link Method
+ - Spent a while wondering why Priority Queue wasn't working right ... but it was, I just misunderstood how add/poll worked

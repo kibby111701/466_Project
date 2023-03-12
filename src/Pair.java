@@ -1,5 +1,7 @@
 package src;
 
+import java.util.Objects;
+
 public class Pair {
     public Cluster c1;
     public Cluster c2;
@@ -10,6 +12,11 @@ public class Pair {
         this.c2 = c2;
         this.distance = distanceAlg.findDistance(c1, c2);
 
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(c1, c2, distance);
     }
 
     public boolean contains(Cluster c){

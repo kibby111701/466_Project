@@ -36,10 +36,12 @@ public class HierarchicalClustering {
         process();
 
         pairsQueue = new PriorityQueue<>(1000, Comparator.comparingDouble(c -> c.distance));
-        ClusterDistance distanceAlg = new PlaceholderDistance();
+        ClusterDistance distanceAlg = new EuclideanDistance();
         initializeQueue(distanceAlg);
         buildHierarchy(distanceAlg);
+
         System.out.println("hi");
+        System.out.println(clusters.get(0));
     }
 
     // reads the file and creates datapoint and cluster objects
