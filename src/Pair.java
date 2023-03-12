@@ -12,4 +12,8 @@ public class Pair {
 
     }
 
+    public boolean contains(Cluster c){
+        return c.equals(c1) || c.equals(c2);
+    }
+
 }
