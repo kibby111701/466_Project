@@ -1,3 +1,7 @@
 Jack -- 1.5 Hours on 3/11
  - Implemented Euclidean Distance with Single Link Method
  - Spent a while wondering why Priority Queue wasn't working right ... but it was, I just misunderstood how add/poll worked
+
+Jack -- 0.5 hours on 3/12
+ - Refactored Distance/Linking Methods into their own separate interfaces
+    - Linking Method takes in a Point Distance Algorithm as part of its constructor

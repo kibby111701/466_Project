@@ -36,9 +36,10 @@ public class HierarchicalClustering {
         process();
 
         pairsQueue = new PriorityQueue<>(1000, Comparator.comparingDouble(c -> c.distance));
-        ClusterDistance distanceAlg = new EuclideanDistance();
-        initializeQueue(distanceAlg);
-        buildHierarchy(distanceAlg);
+        PointDistance distanceAlg = new EuclideanDistance();
+        LinkingMethod linkingMethod = new SingleLink(distanceAlg);
+        initializeQueue(linkingMethod);
+        buildHierarchy(linkingMethod);
 
         System.out.println("hi");
         System.out.println(clusters.get(0));
@@ -84,7 +85,7 @@ public class HierarchicalClustering {
     }
 
     // fills the pair priority queue with all possible pairs of clusters
-    public static void initializeQueue(ClusterDistance distanceAlg){
+    public static void initializeQueue(LinkingMethod distanceAlg){
         Cluster c1;
         Cluster c2;
 
@@ -98,7 +99,7 @@ public class HierarchicalClustering {
     }
 
     // merges nearby clusters until only one is left
-    public static void buildHierarchy(ClusterDistance distanceAlg){
+    public static void buildHierarchy(LinkingMethod distanceAlg){
         Pair curPair;
         ArrayList<Cluster> newChildren;
         Cluster newC;
@@ -120,7 +121,7 @@ public class HierarchicalClustering {
     }
 
     // given a new cluster, create pairs of that cluster with every other current cluster
-    public static void addNewPairs(Cluster newC, ClusterDistance distanceAlg){
+    public static void addNewPairs(Cluster newC, LinkingMethod distanceAlg){
         for (Cluster cluster : clusters) {
             pairsQueue.add(new Pair(newC, cluster, distanceAlg));
         }
