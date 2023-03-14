@@ -37,7 +37,8 @@ public class HierarchicalClustering {
 
         pairsQueue = new PriorityQueue<>(1000, Comparator.comparingDouble(c -> c.distance));
         PointDistance distanceAlg = new EuclideanDistance();
-        LinkingMethod linkingMethod = new SingleLink(distanceAlg);
+        //LinkingMethod linkingMethod = new SingleLink(distanceAlg);
+        LinkingMethod linkingMethod = new CentroidLink(distanceAlg);
         initializeQueue(linkingMethod);
         buildHierarchy(linkingMethod);
 
