@@ -11,3 +11,6 @@ Jack -- 0.5 hours on 3/12
 
 Chris -- 0.5 hours on 3/14
  - Implemented Centroid Linking method
+
+ Chris -- 0.5 hours on 3/16
+ - Added point classification for entropy and purity checking

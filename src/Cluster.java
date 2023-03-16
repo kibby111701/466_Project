@@ -6,11 +6,13 @@ public class Cluster {
 
     public ArrayList<Cluster> children;
     public ArrayList<DataPoint> dataPoints;
+    public double purity;
 
     public Cluster(DataPoint point){ // for creating a cluster from one data point
         this.children = null;
         this.dataPoints = new ArrayList<>();
         dataPoints.add(point);
+        this.purity = getPurity();
     }
 
     public Cluster(ArrayList<Cluster> children){ // for merging two existing clusters
@@ -19,6 +21,7 @@ public class Cluster {
         for (Cluster child : children){
             this.dataPoints.addAll(child.dataPoints);
         }
+        this.purity = getPurity();
     }
 
     public DataPoint computeCentroid(){
@@ -47,5 +50,10 @@ public class Cluster {
             }
         }
         return total/this.dataPoints.size();
+    }
+
+    public double getPurity(){
+        return Math.max(Math.max(this.getClassProportion(1), this.getClassProportion(2)),
+                this.getClassProportion(3));
     }
 }
