@@ -59,7 +59,8 @@ public class HierarchicalClustering {
             String[] vals;
             ArrayList<Double> data;
 
-            int curID = 0;
+            int lineNum = 1;
+            int classification;
             DataPoint curPoint;
 
             while (read.hasNextLine()){
@@ -71,11 +72,19 @@ public class HierarchicalClustering {
                     data.add(Double.parseDouble(val));
                 }
 
-                curPoint = new DataPoint(curID, data);
+                if (lineNum < 60){
+                    classification = 1;
+                } else if (lineNum >= 60 && lineNum < 131){
+                    classification = 2;
+                } else {
+                    classification = 3;
+                }
+
+                curPoint = new DataPoint(lineNum, classification, data);
                 points.add(curPoint);
                 clusters.add(new Cluster(curPoint));
 
-                curID++;
+                lineNum += 1;
             }
 
             read.close();

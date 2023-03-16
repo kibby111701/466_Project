@@ -36,6 +36,16 @@ public class Cluster {
             data.add(amount / this.dataPoints.size());
         }
 
-        return new DataPoint(-1, data);
+        return new DataPoint(-1, 0, data);
+    }
+
+    public double getClassProportion(int classification){ // returns proportion of datapoints in cluster that have the specified classification
+        double total = 0.0;
+        for (DataPoint point : this.dataPoints){
+            if (point.classification == classification){
+                total += 1;
+            }
+        }
+        return total/this.dataPoints.size();
     }
 }
