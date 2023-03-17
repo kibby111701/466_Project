@@ -24,6 +24,7 @@ public class Cluster {
             this.dataPoints.addAll(child.dataPoints);
         }
         this.purity = getPurity();
+        this.entropy = getEntropy();
     }
 
     public DataPoint computeCentroid(){
@@ -48,10 +49,10 @@ public class Cluster {
         double total = 0.0;
         for (DataPoint point : this.dataPoints){
             if (point.classification == classification){
-                total += 1;
+                total += 1.0;
             }
         }
-        return total / this.dataPoints.size();
+        return total / (double)this.dataPoints.size();
     }
 
     public double getPurity(){
@@ -64,8 +65,6 @@ public class Cluster {
 
         for (int i = 1; i<4; i++) {
             double prop = this.getClassProportion(i);
-
-            System.out.println(prop);
 
             if (prop > 0) {
                 total -= prop * log2(prop);
