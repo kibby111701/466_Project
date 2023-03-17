@@ -31,19 +31,47 @@ public class HierarchicalClustering {
     *   e. create new Pairs by computing distances from the new Cluster to other Clusters
     * */
 
+//        makeClustering();
+//
+//        points = new ArrayList<>();
+//        clusters = new ArrayList<>();
+//        process();
+//
+//        pairsQueue = new PriorityQueue<>(1000, Comparator.comparingDouble(c -> c.distance));
+//        LinkingMethod linkingMethod = new SingleLink(distanceAlg);
+//        LinkingMethod linkingMethod = new CentroidLink(distanceAlg);
+//        LinkingMethod linkingMethod = new CompleteLink(distanceAlg);
+//        LinkingMethod linkingMethod = new AverageLink(distanceAlg);
+//        initializeQueue(linkingMethod);
+//        buildHierarchy(linkingMethod);
+//        System.out.println("hi");
+//        System.out.println(clusters.get(0).printTree(3, 0));
+
+        PointDistance distanceAlg = new EuclideanDistance();
+        ArrayList<LinkingMethod> allLinks = new ArrayList<>();
+        allLinks.add(new AverageLink(distanceAlg));
+        allLinks.add(new CentroidLink(distanceAlg));
+        allLinks.add(new SingleLink(distanceAlg));
+        allLinks.add(new CompleteLink(distanceAlg));
+
+        for(LinkingMethod link : allLinks){
+            runLinking(link, 2);
+        }
+
+        System.out.println(clusters.get(0));
+    }
+
+    // runs the entire program with one linking method
+    // NOTE: reprocesses data
+    public static void runLinking(LinkingMethod linkMethod, int printDepth){
         points = new ArrayList<>();
         clusters = new ArrayList<>();
         process();
-
         pairsQueue = new PriorityQueue<>(1000, Comparator.comparingDouble(c -> c.distance));
-        PointDistance distanceAlg = new EuclideanDistance();
-        //LinkingMethod linkingMethod = new SingleLink(distanceAlg);
-        LinkingMethod linkingMethod = new CentroidLink(distanceAlg);
-        initializeQueue(linkingMethod);
-        buildHierarchy(linkingMethod);
-
-        System.out.println("hi");
-        System.out.println(clusters.get(0));
+        initializeQueue(linkMethod);
+        buildHierarchy(linkMethod);
+        System.out.println(linkMethod);
+        System.out.println(clusters.get(0).printTree(printDepth, 0));
     }
 
     // reads the file and creates datapoint and cluster objects
