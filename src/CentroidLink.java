@@ -15,4 +15,9 @@ public class CentroidLink implements LinkingMethod{
         return this.distanceAlg.findDistance(centroid1, centroid2);
 
     }
+
+    @Override
+    public String toString() {
+        return "CentroidLink";
+    }
 }

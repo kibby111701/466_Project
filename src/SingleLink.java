@@ -32,4 +32,9 @@ public class SingleLink implements LinkingMethod {
 
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "SingleLink";
+    }
 }

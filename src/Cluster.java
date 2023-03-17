@@ -38,4 +38,39 @@ public class Cluster {
 
         return new DataPoint(-1, data);
     }
+
+    public int getSize(){
+        return dataPoints.size();
+    }
+
+    //adds tabs to tree output vir easy visuals
+    private String addTabs(int num){
+        String tabs = "";
+        for(int i = num; i > 0; i--){
+            tabs = tabs + "\t";
+        }
+        return tabs;
+    }
+
+    // prints tree to depth maxDepth
+    public String printTree(int maxDepth, int curDepth){
+        String s = "";
+        if(maxDepth == 1){
+            return dataPoints.size() + " *Depth reached*";
+        }
+        else if(children == null){
+            s = dataPoints.size() + "---(LEAF)";
+        }
+        else if(children.size() == 2 && maxDepth > 1){
+            s = dataPoints.size() + "\n" +
+                    addTabs(curDepth) + "|\n" +
+                    addTabs(curDepth) + "|\n" +
+                    addTabs(curDepth) + "--- L " + children.get(0).printTree(maxDepth-1, curDepth+1) + "\n" +
+                    addTabs(curDepth) + "|\n" +
+                    addTabs(curDepth) + "|\n" +
+                    addTabs(curDepth) + "--- R " + children.get(1).printTree(maxDepth-1, curDepth+1);
+        }
+        return s;
+    }
+
 }
