@@ -15,7 +15,7 @@ Chris -- 0.5 hours on 3/14
  Chris -- 0.5 hours on 3/16
  - Added point classification for entropy and purity checking
  
- Saanvi -- 2 hours on 3/18
- - Implemented dendrograms for combinations of euclidean and mahattan distance, and single and centroid linkage 
+ Saanvi -- 2.5 hours on 3/18
+ - Implemented dendrograms for combinations of euclidean and mahattan distance, and single and centroid linkage in R
   - Added slides to presentation 
-   - A lot of time was spent understanding how to read a dendrogram 
+   - A lot of time was spent understanding dendrograms and the different methods of determining the optimal number of clusters
