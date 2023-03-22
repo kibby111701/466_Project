@@ -58,7 +58,7 @@ public class HierarchicalClustering {
             runLinking(link, 2);
         }
 
-        System.out.println(clusters.get(0));
+//        System.out.println(clusters.get(0));
     }
 
     // runs the entire program with one linking method

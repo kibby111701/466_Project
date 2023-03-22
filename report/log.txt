@@ -14,6 +14,9 @@ Chris -- 0.5 hours on 3/14
 
  Chris -- 0.5 hours on 3/16
  - Added point classification for entropy and purity checking
+
+ Jack -- 0.5 hours on 3/16
+ - Worked on entropy function & implemented manhattan distance
  
  Saanvi -- 2.5 hours on 3/18
  - Implemented dendrograms for combinations of euclidean and mahattan distance, and single and centroid linkage in R
