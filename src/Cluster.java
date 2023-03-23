@@ -72,13 +72,13 @@ public class Cluster {
     public String printTree(int maxDepth, int curDepth){
         String s = "";
         if(maxDepth == 1){
-            return dataPoints.size() + " *Depth reached*";
+            return dataPoints.size() + " *Depth reached*" + " Purity: " + getPurity() + "\n";
         }
         else if(children == null){
             s = dataPoints.size() + "---(LEAF)";
         }
         else if(children.size() == 2 && maxDepth > 1){
-            s = dataPoints.size() + "\n" +
+            s = dataPoints.size() + " Purity: " + getPurity() + "\n" +
                     addTabs(curDepth) + "|\n" +
                     addTabs(curDepth) + "|\n" +
                     addTabs(curDepth) + "--- L " + children.get(0).printTree(maxDepth-1, curDepth+1) + "\n" +
