@@ -29,9 +29,10 @@ Jack -- 0.5 hours on 3/16
  - Worked on entropy function & implemented manhattan distance
  
 Saanvi -- 2.5 hours on 3/18
- - Implemented dendrograms for combinations of euclidean and mahattan distance, and single and centroid linkage in R
+ - Implemented dendrograms for combinations of euclidean and mahattan distance, and single, average, complete, and centroid linkage in R
   - Added slides to presentation 
-   - A lot of time was spent understanding dendrograms and the different methods of determining the optimal number of clusters
+   - Plotted gap statistic and silhouette method in R
+     - A lot of time was spent understanding dendrograms and gap statistic and silhouette method
 
 Ben -- 0.5 hours on 3/22
  - Wrote outline for report, updated README
