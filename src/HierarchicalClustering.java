@@ -55,7 +55,7 @@ public class HierarchicalClustering {
         allLinks.add(new CompleteLink(distanceAlg));
 
         for(LinkingMethod link : allLinks){
-            runLinking(link, 2);
+            runLinking(link, 3);
         }
 
 //        System.out.println(clusters.get(0));

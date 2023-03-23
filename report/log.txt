@@ -1,3 +1,6 @@
+All -- 0.5 hours on 3/9
+ - Discussed plan for project, identified dataset to test and assigned tasks
+
 Chris -- 2 Hours on 3/11
  - Implemented base hierarchical clustering algorithm
 
@@ -12,13 +15,20 @@ Jack -- 0.5 hours on 3/12
 Chris -- 0.5 hours on 3/14
  - Implemented Centroid Linking method
 
- Chris -- 0.5 hours on 3/16
+Ben -- 0.5 hours on 3/15
+ - Implemented Complete Link and Average Link Methods
+
+Chris -- 0.5 hours on 3/16
  - Added point classification for entropy and purity checking
 
- Jack -- 0.5 hours on 3/16
+Ben -- 1.5 hours on 3/16
+ - Refactored main project to abstract the data processing and clustering to any linking methods
+ - Implemented tree printing functionality so we could analyze output and compare linking/distance methods
+
+Jack -- 0.5 hours on 3/16
  - Worked on entropy function & implemented manhattan distance
  
- Saanvi -- 2.5 hours on 3/18
+Saanvi -- 2.5 hours on 3/18
  - Implemented dendrograms for combinations of euclidean and mahattan distance, and single and centroid linkage in R
   - Added slides to presentation 
    - A lot of time was spent understanding dendrograms and the different methods of determining the optimal number of clusters
