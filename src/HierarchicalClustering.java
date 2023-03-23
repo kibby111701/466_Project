@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class HierarchicalClustering {
 
     public static final String FILENAME = "wine-clustering.csv";
+    public static final int PRINTDEPTH = 3;
 
     public static ArrayList<DataPoint> points;
     public static ArrayList<Cluster> clusters;
@@ -55,7 +56,7 @@ public class HierarchicalClustering {
         allLinks.add(new CompleteLink(distanceAlg));
 
         for(LinkingMethod link : allLinks){
-            runLinking(link, 3);
+            runLinking(link, PRINTDEPTH);
         }
 
 //        System.out.println(clusters.get(0));

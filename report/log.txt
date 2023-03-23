@@ -32,3 +32,9 @@ Saanvi -- 2.5 hours on 3/18
  - Implemented dendrograms for combinations of euclidean and mahattan distance, and single and centroid linkage in R
   - Added slides to presentation 
    - A lot of time was spent understanding dendrograms and the different methods of determining the optimal number of clusters
+
+Ben -- 0.5 hours on 3/22
+ - Wrote outline for report, updated README
+
+All -- 1.5 hours on 3/22
+ - Prepared for presentation, finished slides, edited report and polished code

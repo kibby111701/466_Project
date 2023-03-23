@@ -89,7 +89,6 @@ public class Cluster {
         return s;
     }
 
-
     public double getPurity(){
         return Math.max(Math.max(this.getClassProportion(1), this.getClassProportion(2)),
                 this.getClassProportion(3));
